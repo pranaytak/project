@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Care - Booking</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="D:\UrbanCare\LOGO\LOGO1.jpeg" alt="Logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Bookings</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+            <div class="cart">
+                <a href="#"><img src="cart_icon.png" alt="Cart"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Booking Details</h1>
+            <div class="booking-details">
+                <div class="service-details">
+                    <h2>Selected Service: Salon</h2>
+                    <p>Service Charges: $50</p>
+                </div>
+                <div class="user-details">
+                    <h2>User Information</h2>
+                    <form action="#">
+                        <!-- User details form here -->
+                    </form>
+                </div>
+            </div>
+            <div class="selected-service">
+                <h2>Selected Service: Salon</h2>
+                <img src="salon.jpg" alt="Salon Service">
+            </div>
+        </div>
+        <div class="container">
+            <h1>Booking Details</h1>
+            <div class="booking-details">
+                <div class="service-details">
+                    <h2>Selected Service: Salon</h2>
+                    <p>Service Charges: $50</p>
+                </div>
+                <div class="user-details">
+                    <h2>User Information</h2>
+                    <form action="#">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" required></textarea>
+
+                        <label for="time-slot">Select Time Slot:</label>
+                        <select id="time-slot" name="time-slot" required>
+                            <option value="morning">Morning (9 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
+                            <option value="evening">Evening (3 PM - 6 PM)</option>
+                        </select>
+
+                        <input type="submit" value="Book Now">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
