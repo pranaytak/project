@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Care - Home Maintenance Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 20px auto;
+            max-width: 1200px;
+            align-items: center;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #ccc;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service h2 {
+            color: #0b0b0b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service img {
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #000;
+            color: #f0e4e4;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0707eb98;
+        }
+
+        .logo img {
+            height: 700px;
+            /* Adjust as needed */
+        }
+
+        .partition {
+            display: flex;
+            margin: 20px;
+
+        }
+
+        .partition1 {
+            width: 30%;
+            margin: 0 auto;
+            justify-content: left;
+            align-items: left;
+            padding: 20px 0;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+
+        }
+
+        .partition2 {
+            width: 60%;
+            margin: 0 auto;
+            justify-content: right;
+            align-items: right;
+            padding: 20px 0;
+            padding-left: 20px 0;
+        }
+
+        /* Three column layout */
+        .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        .middle {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        /* Place text to the right */
+        .right {
+            text-align: right;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {
+            width: 60%;
+            height: 18px;
+            background-color: #04AA6D;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 18px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 18px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 18px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 18px;
+            background-color: #f44336;
+        }
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 400px) {
+
+            .side,
+            .middle {
+                width: 100%;
+            }
+
+            /* Hide the right column on small screens */
+            .right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div><img src="D:\UrbanCare-Final\Assets\Logo\URBAN CARE-logos_white.png" alt="Logo"></div>
+                <div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Cart</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Signup</a></li>
+                        <li><a href="#">Profile</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="partition">
+            <div class="partition1">
+
+                <img src="D:\UrbanCare-Final\Assets\Service\HomeMaintenance\Home Maintenance Services.jpg" alt="HomeMaintenance Service"
+                    width="435px">
+                <h2>Home Maintenance</h2>
+                <p>Introducing our comprehensive online platform for all your HomeMaintenance needs! Seamlessly divided into
+                    specialized partitions for plumbing, gardening and various other services we offer
+                    convenience and efficiency like never before. Experience top-notch quality and reliability with our
+                    user-friendly interface. Trust us with your garments, we'll handle the rest!</p>
+                <p>
+                    UrbanCare Assured Service
+                </p>
+                <span class="heading">User Rating</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgba(43, 37, 16, 0.441);"> &#11088;</span>
+                
+                <p>4.1 average based on 254 reviews.</p>
+                <hr style="border:3px solid #000000">
+
+                <div class="row">
+                    <div class="side">
+                        <div>5 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>150</div>
+                    </div>
+                    <div class="side">
+                        <div>4 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>63</div>
+                    </div>
+                    <div class="side">
+                        <div>3 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>15</div>
+                    </div>
+                    <div class="side">
+                        <div>2 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>6</div>
+                    </div>
+                    <div class="side">
+                        <div>1 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>20</div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="partition2">
+                <div class="services">
+                    <div class="service">
+                        <video width="600" autoplay muted>
+                            <source src="D:\UrbanCare-Final\Assets\Service\HomeMaintenance\6474086-hd_1280_720_25fps.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="service">
+                        <h2>Plumbing Services</h2>
+                        <p>From leaky faucets to pipe installations, our expert plumbers ensure your plumbing system runs smoothly, resolving issues promptly and efficiently.</p>
+                        <p>Starts at Rs450</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Electrical Services</h2>
+                        <p>Keep your home safe and functional with our electrical services. From wiring repairs to fixture installations, our certified electricians handle all your electrical needs with precision.</p>
+                        <p>Starts at Rs500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Gardening Services</h2>
+                        <p>Elevate your outdoor space with our gardening services. From lawn mowing to landscaping design, our experienced gardeners create vibrant, inviting outdoor environments.</p>
+                        <p>Starts at Rs500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Painting Services</h2>
+                        <p>Transform your home with our professional painting services. Our skilled painters deliver flawless results, using premium materials and expert techniques to refresh your interiors or exteriors.</p>
+                        <p>Starts at Rs2000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Flooring Services</h2>
+                        <p>Enhance your home's aesthetics and functionality with our flooring services. From hardwood installation to tile repairs, we offer quality flooring solutions tailored to your needs.</p>
+                        <p>Starts at Rs1500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Roofing Services</h2>
+                        <p>Protect your home from the elements with our roofing services. From repairs to replacements, our roofing experts ensure a durable, leak-free roof that enhances curb appeal.</p>
+                        <p>Starts at Rs1500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
