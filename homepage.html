@@ -5,36 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Care - Home</title>
-    <link rel="stylesheet" href="f.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="D:\UrbanCare\LOGO\LOGO1.jpeg" alt="Logo">
-            </div>
-            <div>
-                <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Bookings</a></li>
-                    <li><a href="#">Account</a></li>
-                </ul>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search">
-                <button>Search</button>
-            </div>
-            <div class="cart">
-                <a href="#"><img src="cart_icon.png" alt="Cart"></a>
-            </div>
-        </nav>
-    </header>
+<body style="background-color: #f9f6f6;">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="A:\urban care\URBAN CARE-logos_white1.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search">
+            <button type="button"
+                onclick="searchText(document.getElementById('searchInput').value)">&#x1F50E;&#xFE0E;</button>
+        </div>
+        <div class="profile-container">
+            <img src="A:\urban care\WIN_20240413_17_41_30_Pro.jpg" alt="Profile">
+        </div>
+
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
     <main>
+
         <div class="container">
             <h1>
-                <center>Welcome to urban Care</center>
+                <center>Welcome To Urban Care</center>
             </h1>
             <div class="services">
                 <div class="service">
@@ -42,33 +48,145 @@
                     <h2>Salon</h2>
                     <p>Elevate your look with our expert salon services. From trendy haircuts to luxurious spa
                         treatments, our skilled stylists and aestheticians are dedicated to helping you look and feel
-                        your best..</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                        your best.</p>
+                    
+                    <button class="add-to-cart" id="salonBtn">Add to Cart</button>
+                    
+
+
+                </div>
+
+                <div class="service">
+                    <img src="A:\urban care\Appliance Repair.jpg" alt="Appliance Repair Service">
+                    <h2>Appliance Repair</h2>
+                    <p>Keep your home running smoothly with our reliable plumbing service.</p>
+                    
+                    <button class="add-to-cart" id="repairBtn">Add to Cart</button>
                 </div>
                 <div class="service">
-                    <img src="plumbing.jpg" alt="Plumbing Service">
-                    <h2>Plumbing</h2>
-                    <p>Keep your home running smoothly with our reliable plumbing service .</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="service">
-                    <img src="electrician.jpg" alt="Electrician Service">
-                    <h2>Electrician</h2>
+                    <img src="A:\urban care\Home Maintenance.jpg" alt="Home Maintenance Service">
+                    <h2>Home Maintenance</h2>
                     <p>Our licensed technicians are equipped to handle everything from minor repairs to complete
-                        installations, ensuring the safety and efficiency of your home's systems..</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                        installations, ensuring the safety and efficiency of your home's systems.</p>
+                    
+                    <button class="add-to-cart" id="MaintenanceBtn">Add to Cart</button>
                 </div>
                 <div class="service">
                     <img src="laundry.jpg" alt="Laundry Service">
                     <h2>Laundry</h2>
                     <p>Say goodbye to laundry day hassles with our convenient laundry services. We'll take care of
                         washing, drying, and folding your clothes, so you can enjoy more free time and fresher, cleaner
-                        garments..</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                        garments.</p>
+                    
+                    <button class="add-to-cart" id="laundryBtn">Add to Cart</button>
+                </div>
+                <div class="service">
+                    <img src="A:\urban care\Cleaning.jpg" alt="Cleaning Service">
+                    <h2>Cleaning</h2>
+                    <p>Say goodbye to household cleaning hassles with our efficient and reliable cleaning services.
+                        We'll ensure your spaces are sparkling clean, giving you more time to relax and enjoy your home.
+                    </p>
+                    
+                    <button class="add-to-cart" id="cleaningBtn">Add to Cart</button>
                 </div>
             </div>
         </div>
     </main>
+    <br>
+    <br>
+    <section id="technicians">
+        <h1 style="text-align: center;"> Our Technicians </h1>
+        <div class="itemsAreCentered">
+            <div class="technicians-container">
+                <div class="techinician">
+                    <div class="card-image"><img src="A:\urban care\techinician.jpg"
+                            alt="well equipped & trained workers" width="200" height="200"></div>
+                    <h2>Well Equipped </h2>
+                    <!-- <br> -->
+                </div>
+
+                <div class="techinician">
+                    <div class="card-image"><img src="A:\urban care\techinician2.jpg"
+                            alt="well equipped & trained workers" width="200" height="200"></div>
+                    <h2>Deep Cleaning</h2>
+                    <!-- <br> -->
+                </div>
+                <div class="techinician">
+                    <div class="card-image"><img src="A:\urban care\techinician3.jpg" alt="advanced tools" width="200"
+                            height="200">
+                    </div>
+                    <h2>Trained Technician</h2>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="about">
+        <div class="about-container">
+            <h1>About Us</h1>
+            <p>Welcome to Urban Care, your trusted partner in home services. We are committed to providing exceptional services that enhance your living experience and simplify your daily life. Our journey began with a vision to redefine the standards of home maintenance and services, and today, we stand as a leading name in the industry.</p>
+            <p>At Urban Care, we believe in:</p>
+            <ul>
+                <ol><strong>Quality:</strong> We deliver top-notch services backed by skilled professionals and advanced technology to ensure your satisfaction.</ol>
+                <ol><strong>Reliability:</strong> You can rely on us for punctuality, transparency, and a hassle-free experience from booking to completion.</ol>
+                <ol><strong>Convenience:</strong> Our user-friendly platform makes it easy to book services, track progress, and manage appointments with just a few clicks.</ol>
+                <ol><strong>Innovation: </strong> We continuously innovate to bring you the latest trends, techniques, and solutions for your home needs, ensuring efficiency and excellence.</ol>
+            </ul>
+            <p>With a wide range of services including salon, appliance repair, home maintenance, cleaning, and more, Urban Care caters to all your home service requirements. Our dedicated team of technicians and professionals are here to make your life easier, so you can focus on what matters most.</p>
+            <p>Join us in our mission to create happier homes and communities. Experience the Urban Care difference today!</p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+     
+
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="A:\urban care\URBAN CARE-logos_white1.png" alt="Urban Company Logo">
+            </div>
+    
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+                <p>Email: contact@urbancare.com</p>
+                <p>Phone: 123-456-7890</p>
+                <p>Address: 123 Main Street, City, Country</p>
+            </div>
+            
+            <p>&copy; 2024 Urban Company. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script src="home.js"></script>
+
 </body>
 
 </html>
+
+
+
+
+
