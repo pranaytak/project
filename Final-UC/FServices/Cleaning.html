@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Care - Cleaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f7f7;
+            color: #f8f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        .container {
+            width: 100vw;
+            /* margin: ; */
+            max-width: 100px;
+        }
+
+        header {
+            background-color: #1e1d1d;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #ede7e7;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .technician {
+            /* max-width: 15rem; */
+            width: 32%;
+            /* border: 1px solid; */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        #technicians {
+            width: 100%;
+            background-color: #f9f7f7;
+        }
+
+        .card-image {
+            width: 95%;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 0.5rem;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+
+        }
+
+        .itemsAreCentered {
+            width: 83%;
+            max-width: 1250px;
+            /* background-color: aqua; */
+            margin: 0 auto;
+
+        }
+
+        .technicians-container {
+            display: flex;
+            background-color: #f9f7f7;
+            /* flex-wrap: wrap; */
+            gap: 10px;
+            /* justify-content: center; */
+
+        }
+
+
+        .technicians-container {
+
+            /* border-radius: 5px; */
+            box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            /* text-align: center; */
+        }
+
+        /* .technician h1 {
+    color: #0b0b0b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.technician p {
+    margin-bottom: 15px;
+} */
+
+
+        .service {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 40%;
+            text-align: center;
+        }
+
+        .service h2 {
+            color: #0b0b0b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service img {
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 15px;
+        }
+
+
+        .cart {
+            margin-left: 20px;
+        }
+
+        .cart a {
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart img {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #100f0f;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        /*
+
+
+        /* Add styles for the About Us section */
+        #about {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+            /* Margin added to create space around the section */
+        }
+
+        .about-box {
+
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: rgb(0, 0, 0);
+            outline-width: 2px;
+
+        }
+
+        .about-container {
+
+            text-align: center
+        }
+
+        .about-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 36px;
+        }
+
+        .about-container p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .about-container ul {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        .social-icons i {
+            font-size: 24px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+
+        .bg {
+            position: absolute;
+            height: 50vh;
+            width: 100vw;
+            background: linear-gradient(#d2cccd, #000000);
+        }
+
+        .wrapper {
+            font-size: 1.2ee;
+            width: 25em;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            background-color: #ffffff;
+            border-radius: 0.5em;
+            padding: 4em 2em;
+            box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15);
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: space-around;
+        }
+
+
+        .number {
+            display: block;
+            text-align: center;
+        }
+
+
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: grid;
+        }
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 10px 0px;
+            z-index: 1000;
+            /* Ensure the navbar appears above other content */
+        }
+
+        .logo img {
+            width: 120px;
+            /* Adjust width as needed */
+            height: auto;
+            display: block;
+            /* Ensure the image behaves as a block element */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            margin-right: auto;
+            /* Pushes the nav links to the left */
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            margin-left: auto;
+            /* Pushes the search container to the right */
+            margin-right: 20px;
+            /* Add some space between the search container and the profile */
+        }
+
+        .search-container input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            /* Add underline */
+            background-color: transparent;
+            color: #fff;
+            padding: 5px;
+            width: 200px;
+            /* Adjust width as needed */
+            outline: none;
+        }
+
+        .search-container input[type="text"]::placeholder {
+            color: #fff;
+            /* Change placeholder color */
+        }
+
+        .search-container button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .profile-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .paragraph {
+            color: #fff;
+            margin-top: 70px;
+            /* Adjust margin-top to move the paragraph below the navbar */
+            padding: 20px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        .profile img {
+            width: 50px;
+            /* Increased size */
+            height: 50px;
+            /* Increased size */
+            border-radius: 100%;
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+        }
+
+        /* Profile menu styling */
+        .menu {
+            position: absolute;
+            top: 60px;
+            /* Adjust as needed */
+            right: 20px;
+            /* Adjust as needed */
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: none;
+            /* Hidden by default */
+            z-index: 1001;
+            /* Ensure the menu appears above other content */
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .menu button:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .paragraph {
+            color: #fff;
+            margin-top: 70px;
+            /* Adjust margin-top to move the paragraph below the navbar */
+            padding: 20px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        .hero {
+
+            width: 100vw;
+        }
+
+        #footerLogo {
+            height: 50px;
+            width: 150px;
+        }
+
+        .videoHero {
+            width: 300px;
+        }
+
+        /*          */
+        .Pservices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service h2 {
+            color: #0b0b0b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service img {
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #000;
+            color: #f0e4e4;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0707eb98;
+        }
+
+        .logo img {
+            height: 40px;
+            /* Adjust as needed */
+        }
+
+        .partition {
+            display: flex;
+            margin: 20px;
+
+        }
+
+        .partition1 {
+            width: 30%;
+            margin: 0 auto;
+            justify-content: left;
+            align-items: left;
+            padding: 20px 0;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+
+        }
+
+        .partition2 {
+            width: 60%;
+            margin: 0 auto;
+            justify-content: right;
+            align-items: right;
+            padding: 20px 0;
+            padding-left: 20px 0;
+        }
+
+        /* Three column layout */
+        .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        .middle {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        /* Place text to the right */
+        .right {
+            text-align: right;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {
+            width: 60%;
+            height: 18px;
+            background-color: #04AA6D;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 18px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 18px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 18px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 18px;
+            background-color: #f44336;
+        }
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 400px) {
+
+            .side,
+            .middle {
+                width: 100%;
+            }
+
+            /* Hide the right column on small screens */
+            .right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="E:\UC-Code\NAVBAR\URBAN CARE-logos_white1.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#servicess">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search">
+                <button type="button"
+                    onclick="searchText(document.getElementById('searchInput').value)">&#x1F50E;&#xFE0E;</button>
+            </div>
+            <div class="profile" id="profile">
+                <img src="E:\UC-Code\NAVBAR\profile.jpg" alt="Profile Picture" onclick="toggleMenu()">
+                <div class="menu" id="profileMenu">
+                    <!-- Menu items as buttons -->
+                    <a href="E:\UC-Code\FINAL\profile.html">
+                        <button type="button">Profile</button>
+                    </a>
+                    <button onclick="location.href='#';">Settings</button>
+                    <button class="btn btn-outline-success" type="button" id="signOutButton">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="partition">
+            <div class="partition1">
+
+                <img src="D:\UrbanCare-Final\Assets\Service\Cleaning\Cleaning.jpg" alt="Cleaning Service" width="435px">
+                <h2>Cleaning</h2>
+                <p>Our cleanup services ensure immaculate spaces, from homes to offices. We offer comprehensive
+                    solutions including deep cleaning, carpet and window cleaning, post-construction cleanup, and
+                    eco-friendly options for a healthier environment. With over-the-top convenience and
+                    expertise, we guarantee satisfaction from the comfort of your home. Your ultimate destination for
+                    cleaning perfection awaits – explore our services now!</p>
+                <p>
+                    UrbanCare Assured Service
+                </p>
+                <span class="heading">User Rating</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                <span style="font-size:150%;color:rgba(43, 37, 16, 0.441);"> &#11088;</span>
+
+                <p>4.1 average based on 254 reviews.</p>
+                <hr style="border:3px solid #000000">
+
+                <div class="row">
+                    <div class="side">
+                        <div>5 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>150</div>
+                    </div>
+                    <div class="side">
+                        <div>4 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>63</div>
+                    </div>
+                    <div class="side">
+                        <div>3 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>15</div>
+                    </div>
+                    <div class="side">
+                        <div>2 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>6</div>
+                    </div>
+                    <div class="side">
+                        <div>1 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>20</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="partition2">
+                <div class="pservices">
+                    <div class="service">
+                        <video width="700" autoplay muted>
+                            <source src="D:\UrbanCare-Final\Assets\Service\Cleaning\6195520-hd_1280_720_25fps.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="service">
+                        <h2>House Cleaning </h2>
+                        <p>Enjoy a sparkling clean home without lifting a finger. Our professional cleaners will
+                            meticulously dust, vacuum, mop, and sanitize every corner, leaving your space fresh and
+                            inviting.</p>
+                        <p>Starts at Rs1000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Office Cleaning</h2>
+                        <p>Create a productive work environment with our office cleaning service. We'll ensure desks are
+                            organized, floors are spotless, and common areas are sanitized, fostering a clean and
+                            healthy workspace.</p>
+                        <p>Starts at Rs1000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Post-Construction Cleanup</h2>
+                        <p>After a renovation or construction project, let us handle the mess. Our post-construction
+                            cleanup service removes debris, dust, and construction residue, leaving your space pristine
+                            and ready for occupancy.</p>
+                        <p>Starts at Rs2000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Janitorial Service</h2>
+                        <p>Ensure cleanliness and orderliness in your facility with our janitorial service. Our
+                            dedicated team will handle routine cleaning tasks, such as restroom maintenance, trash
+                            removal, and floor care, to keep your space pristine around the clock..</p>
+                        <p>Starts at Rs500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <section id="footer">
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img id="footerLogo" src="URBAN CARE-logos_white1.png" alt="Urban Company Logo">
+                </div>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <ul class="footer-links">
+                    <li><a href="#">Back To Top</a></li>
+                    <li><a href="#servicess">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+                <div class="contact-info">
+                    <p>Email: contact@urbancare.com</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Address: 123 Main Street, City, Country</p>
+                </div>
+
+                <p>&copy; 2024 Urban Company. All rights reserved.</p>
+            </div>
+    </section>
+    </footer>
+</body>
+<script src="homeLogic.js"></script>
+
+</html>
