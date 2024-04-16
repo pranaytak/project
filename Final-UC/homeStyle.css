@@ -1,0 +1,531 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f7f7;
+    color: #f8f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.container {
+    width: 100vw;
+    /* margin: ; */
+    max-width: 100px;
+}
+
+header {
+    background-color: #1e1d1d;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ede7e7;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.technician {
+    /* max-width: 15rem; */
+    width: 32%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#technicians {
+    width: 100%;
+    background-color: #f9f7f7;
+}
+
+.card-image {
+    width: 95%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+
+}
+
+.itemsAreCentered {
+    width: 83%;
+    max-width: 1250px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+
+}
+
+.technicians-container {
+    display: flex;
+    background-color: #f9f7f7;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    /* justify-content: center; */
+
+}
+
+
+.technicians-container {
+
+    /* border-radius: 5px; */
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    /* text-align: center; */
+}
+
+/* .technician h1 {
+    color: #0b0b0b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.technician p {
+    margin-bottom: 15px;
+} */
+
+
+.service {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+}
+
+.service h2 {
+    color: #0b0b0b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    margin-bottom: 15px;
+}
+
+
+.cart {
+    margin-left: 20px;
+}
+
+.cart a {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.cart img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #100f0f;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+/*
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.add-to-cart {
+    background-color: #000;
+    color: #f0e4e4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #0707eb98;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #0056b3;
+}
+
+
+*/
+
+/* Add styles for the About Us section */
+#about {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 50px 0;
+    /* Margin added to create space around the section */
+}
+
+.about-box {
+
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+    border: 1px solid black;
+    outline-style: solid;
+    outline-color: rgb(0, 0, 0);
+    outline-width: 2px;
+    
+}
+.about-container{
+    
+    text-align: center
+
+}
+
+.about-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 36px;
+}
+
+.about-container p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-container ul {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+
+.social-icons i {
+    font-size: 24px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+
+.bg {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    background: linear-gradient(#d2cccd, #000000);
+}
+
+.wrapper {
+    font-size: 1.2ee;
+    width: 25em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    padding: 4em 2em;
+    box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+
+.number {
+    display: block;
+    text-align: center;
+}
+
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: grid;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 0px;
+    z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
+.logo img {
+    width: 120px; /* Adjust width as needed */
+    height: auto;
+    display: block; /* Ensure the image behaves as a block element */
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin-right: auto; /* Pushes the nav links to the left */
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-left: auto; /* Pushes the search container to the right */
+    margin-right: 20px; /* Add some space between the search container and the profile */
+}
+
+.search-container input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #fff; /* Add underline */
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    width: 200px; /* Adjust width as needed */
+    outline: none;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #fff; /* Change placeholder color */
+}
+
+.search-container button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.profile-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.profile-container img {
+    width: 100%;
+    height: auto;
+}
+
+.paragraph {
+    color: #fff;
+    margin-top: 70px; /* Adjust margin-top to move the paragraph below the navbar */
+    padding: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.profile img {
+    width: 50px; /* Increased size */
+    height: 50px; /* Increased size */
+    border-radius: 100%;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Profile menu styling */
+.menu {
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    z-index: 1001; /* Ensure the menu appears above other content */
+}
+
+.menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #f0f0f0;
+}
+
+
+.paragraph {
+    color: #fff;
+    margin-top: 70px;
+    /* Adjust margin-top to move the paragraph below the navbar */
+    padding: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+.hero{
+    
+    width:100vw ;
+}
+#footerLogo{
+    height: 50px;
+    width: 150px;
+}
+
+.videoHero{
+    width: 300px;
+}
