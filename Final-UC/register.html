@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif;
+        }
+
+        #MainRegistrationForm {
+            background-color: #f8f9fa; /* Light gray background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            padding: 30px;
+            animation: fadeIn 0.5s ease-in-out;
+            margin: auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-floating input.form-control {
+            border-radius: 5px;
+            border-color: #ced4da; /* Light gray border */
+            background-color: #fff; /* White background */
+            color: #495057; /* Dark text color */
+        }
+
+        .form-floating label {
+            color: #495057; /* Dark text color */
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="logo-container">
+        <img src="E:\UC-Code\1\FINAL LOGO.png" alt="Company Logo" style="width: 200px;">
+    </div>
+    <form id="MainRegistrationForm">
+        <h2 class="mb-3 text-center">Register User</h2>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="emailInp" placeholder="Email address">
+            <label for="emailInp">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="passwordInp" placeholder="Password">
+            <label for="passwordInp">Password</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="firstNameInp" placeholder="First Name">
+            <label for="firstNameInp">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="lastNameInp" placeholder="Last Name">
+            <label for="lastNameInp">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="phoneNumberInp" placeholder="Phone Number">
+            <label for="phoneNumberInp">Phone Number</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="addressInp" placeholder="Address">
+            <label for="addressInp">Address</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary d-block mx-auto">Create New User</button>
+        <a href="login.html"><button type="button" class="btn btn-secondary d-block mx-auto mt-2">SignIn</button></a>
+    </form>
+</div>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnAQLlEB2cp12vsM45-QnqrTO719zLDpM",
+      authDomain: "urbancare-project.firebaseapp.com",
+      databaseURL: "https://urbancare-project-default-rtdb.firebaseio.com",
+      projectId: "urbancare-project",
+      storageBucket: "urbancare-project.appspot.com",
+      messagingSenderId: "305230435245",
+      appId: "1:305230435245:web:0ec27c9e1f89030ffd8724",
+      measurementId: "G-L902X3Q69V"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth(app);
+    
+    let emailInp = document.getElementById('emailInp');
+    let passwordInp = document.getElementById('passwordInp');
+    let firstNameInp = document.getElementById('firstNameInp');
+    let lastNameInp = document.getElementById('lastNameInp');
+    let phoneNumberInp = document.getElementById('phoneNumberInp');
+    let addressInp = document.getElementById('addressInp');
+    
+
+
+    let MainRegistrationForm = document.getElementById('MainRegistrationForm');
+
+    let RegisterUser = evt => {
+      evt.preventDefault();
+
+      createUserWithEmailAndPassword(auth, emailInp.value, passwordInp.value)
+      .then((Credentials)=>{
+          set(ref(db, 'usersAuthList/' + Credentials.user.uid),{
+              firstName: firstNameInp.value,
+              lastName: lastNameInp.value,
+              emailId: emailInp.value,
+              userPassword: passwordInp.value,
+              phoneNumber: phoneNumberInp.value,
+              address: addressInp.value,
+              
+          
+          
+            })
+      })
+      .catch((error)=>{
+          alert(error.message);
+          console.log(error.code);
+          console.log(error.message);
+      })
+    
+    }
+    MainRegistrationForm.addEventListener('submit', RegisterUser);
+  </script> 
+</body>  
+</html>

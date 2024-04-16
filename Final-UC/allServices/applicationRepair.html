@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Care - ApplianceRepair</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 20px auto;
+            max-width: 1200px;
+            align-items: center;
+        }
+
+        header {
+            background-color: #1e1d1d;
+            color: #fff;
+            padding: 10px 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        
+        
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .menu a:hover {
+            color: #ede7e7;
+        }
+        
+        
+        /* Profile menu styling */
+        .menu {
+            position: absolute;
+            top: 60px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+            z-index: 1001; /* Ensure the menu appears above other content */
+        }
+        
+        .menu button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        .menu button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        
+        .paragraph {
+            color: #fff;
+            margin-top: 70px;
+            /* Adjust margin-top to move the paragraph below the navbar */
+            padding: 20px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service h2 {
+            color: #0b0b0b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service img {
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #000;
+            color: #f0e4e4;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0707eb98;
+        }
+
+        .logo img {
+            height: 700px;
+            /* Adjust as needed */
+        }
+
+        .partition {
+            display: flex;
+            margin: 20px;
+
+        }
+
+        .partition1 {
+            width: 30%;
+            margin: 0 auto;
+            justify-content: left;
+            align-items: left;
+            padding: 20px 0;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+
+        }
+
+        .partition2 {
+            width: 60%;
+            margin: 0 auto;
+            justify-content: right;
+            align-items: right;
+            padding: 20px 0;
+            padding-left: 20px 0;
+        }
+
+        /* Three column layout */
+        .side {
+            float: left;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        .middle {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        /* Place text to the right */
+        .right {
+            text-align: right;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {
+            width: 60%;
+            height: 18px;
+            background-color: #04AA6D;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 18px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 18px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 18px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 18px;
+            background-color: #f44336;
+        }
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 400px) {
+
+            .side,
+            .middle {
+                width: 100%;
+            }
+
+            /* Hide the right column on small screens */
+            .right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="E:\UC-Code\NAVBAR\URBAN CARE-logos_white1.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#servicess">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search">
+                <button type="button" onclick="searchText(document.getElementById('searchInput').value)">&#x1F50E;&#xFE0E;</button>
+            </div>
+            <div class="profile" id="profile">
+                <img src="E:\UC-Code\NAVBAR\profile.jpg" alt="Profile Picture" onclick="toggleMenu()">
+                <div class="menu" id="profileMenu">
+                    <!-- Menu items as buttons -->
+                    <button onclick="location.href='#';">Profile</button>
+                    <button onclick="location.href='#';">Settings</button>
+                    <button class="btn btn-outline-success" type="button" id="signOutButton">Logout</button>
+                </div>
+            </div>
+        </nav>
+    <main>
+        <div class="partition">
+            <div class="partition1">
+               
+                <img src="applicationRepairPhoto.jpg" width="435px">
+                <h2>Appliance Repair and Maintenance</h2>
+                <p>Keep your household running smoothly with our comprehensive appliance services. From refrigerators to ovens, our expert technicians handle repairs, installations, and regular maintenance for all your appliances, ensuring they operate efficiently and reliably.With over-the-top convenience and
+                    expertise, we guarantee satisfaction from the comfort of your home. Your ultimate destination for
+                    cleaning perfection awaits – explore our services now!</p>
+                    <p>
+                        UrbanCare Assured Service
+                    </p>
+                    <span class="heading">User Rating</span>
+                    <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                    <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                    <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                    <span style="font-size:150%;color:rgb(255, 200, 0);"> &#11088;</span>
+                    <span style="font-size:150%;color:rgba(43, 37, 16, 0.441);"> &#11088;</span>
+                    
+                    <p>4.1 average based on 254 reviews.</p>
+                    <hr style="border:3px solid #000000">
+    
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+            </div>
+            
+
+            <div class="partition2">
+                <div class="services">
+                    <div class="service">
+                        <video width="700" autoplay muted>
+                            <source src="applicationRepairVideo.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                          </video>
+                    </div>
+                    <div class="service">
+                        <h2>Air Conditioner</h2>
+                        <p>Ensure optimal cooling performance with our air conditioner services. From repairs to regular maintenance, our technicians keep your AC unit running efficiently for year-round comfort..</p>
+                        <p>Starts at Rs2000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Heater</h2>
+                        <p>Stay warm and cozy during chilly weather with our heater services. Whether you need repairs or maintenance, our experts ensure your heating system operates safely and effectively.</p>
+                        <p>Starts at Rs.1000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Washing Machine</h2>
+                        <p>Keep your laundry routine running smoothly with our washing machine services. From troubleshooting issues to regular maintenance, our technicians ensure your washer performs at its best.</p>
+                        <p>Starts at Rs1500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Dishwasher</h2>
+                        <p>Enjoy hassle-free dishwashing with our dishwasher services. From diagnosing malfunctions to thorough cleanings, our experts ensure your dishwasher operates efficiently for sparkling clean dishes every time.</p>
+                        <p>Starts at Rs.1000</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="service">
+                        <h2>Water Purifier</h2>
+                        <p>Ensure clean and safe drinking water with our water purifier services. From filter replacements to system maintenance, our experts keep your water purifier running efficiently, providing you with pure and healthy drinking water.</p>
+                        <p>Starts at Rs500</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchText = this.value.trim();
+        searchText(searchText);
+    });
+    
+    // Trigger search when the search button (logo) is clicked
+    document.querySelector('.search-container button').addEventListener('click', function () {
+        const searchText = document.getElementById('searchInput').value;
+        searchText(searchText);
+    });
+    
+    function searchText(text) {
+        const searchText = text.toLowerCase().trim();
+        const elements = document.querySelectorAll(".service h2, .service p"); // Target specific elements for highlighting
+        let textFound = false;
+    
+        elements.forEach(element => {
+            const originalText = element.dataset.originalText || element.textContent;
+            let newText = originalText;
+    
+            if (searchText !== '') {
+                newText = originalText.replace(new RegExp(`\\b${searchText}\\b`, "ig"), match => {
+                    textFound = true;
+                    return `<span class="highlight">${match}</span>`;
+                });
+            }
+    
+            element.innerHTML = newText;
+        });
+    
+        if (!textFound) {
+            alert("Text not found.");
+        } else {
+            scrollToFirstHighlight();
+        }
+    }
+    
+    // Clear search highlights when search bar is cleared
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchText = this.value.trim();
+        if (searchText === '') {
+            const highlightedText = document.querySelectorAll('.highlight');
+            highlightedText.forEach(node => {
+                const parent = node.parentNode;
+                parent.replaceChild(document.createTextNode(node.textContent), node);
+            });
+        }
+    });
+    
+    function scrollToFirstHighlight() {
+        const highlight = document.querySelector('.highlight');
+        if (highlight) {
+            const topOffset = highlight.getBoundingClientRect().top;
+            if (topOffset > window.innerHeight) {
+                window.scrollTo({
+                    top: topOffset + window.scrollY - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+    
+    function toggleMenu() {
+        var menu = document.getElementById("profileMenu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+    
+    // Close the menu when clicking outside
+    window.onclick = function (event) {
+        if (!event.target.matches('.profile img')) {
+            var menus = document.getElementsByClassName("menu");
+            for (var i = 0; i < menus.length; i++) {
+                var menu = menus[i];
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                }
+            }
+        }
+    }
+    
+    /*profile logic along with toggle and signOut*/
+    //for creds
+            function toggleMenu() {
+                var menu = document.getElementById("profileMenu");
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            }
+    
+            // Close the menu when clicking outside
+            window.onclick = function (event) {
+                if (!event.target.matches('.profile img')) {
+                    var menus = document.getElementsByClassName("menu");
+                    for (var i = 0; i < menus.length; i++) {
+                        var menu = menus[i];
+                        if (menu.style.display === "block") {
+                            menu.style.display = "none";
+                        }
+                    }
+                }
+            }
+       
+            let userCreds = JSON.parse(localStorage.getItem("user-creds"));
+            let userInfo = JSON.parse(localStorage.getItem("user-info"));
+            
+            let msgHead = document.getElementById('msg');
+            let greetHead = document.getElementById('greet');
+            let signOutBtn = document.getElementById('signOutButton');
+            
+    
+            let signOut = ()=>{
+                localStorage.removeItem("user-creds");
+                localStorage.removeItem("user-info");
+                window.location.href = 'login.html'
+            }
+    
+            let checkCred = ()=>{
+                msgHead.innerText = `user with email "${userCreds.email}" logged in`;
+            greetHead.innerText = `welcome ${userInfo.firstName + " " + userInfo.lastName}!`;
+            }
+    
+            window.addEventListener('load', checkCred);
+            signOutBtn.addEventListener('click', signOut);
+       
+</script>
+</html>

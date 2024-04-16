@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #fff;
+        }
+
+        
+        .highlight {
+            background-color: yellow;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: row;
+            background-color: #000000;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .profile-section {
+            flex: 1;
+            padding-right: 30px;
+
+        }
+
+        .line {
+            border-left: 2px solid white;
+            height: 500px;
+        }
+
+        .order-section {
+            flex: 1;
+            padding-left: 30px;
+
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .data-field {
+            margin-bottom: 15px;
+        }
+
+        .data-field label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .data-field p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .order-history {
+            padding-top: 20px;
+        }
+
+        .order-history h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .order-history ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-history li {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .edit-btn {
+            display: block;
+            width: 100%;
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-btn:hover {
+            background-color: #666;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 10px 0px;
+            z-index: 1000; /* Ensure the navbar appears above other content */
+        }
+        
+        .logo img {
+            width: 120px; /* Adjust width as needed */
+            height: auto;
+            display: block; /* Ensure the image behaves as a block element */
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            margin-right: auto; /* Pushes the nav links to the left */
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            margin-left: auto; /* Pushes the search container to the right */
+            margin-right: 20px; /* Add some space between the search container and the profile */
+        }
+        
+        .search-container input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #fff; /* Add underline */
+            background-color: transparent;
+            color: #fff;
+            padding: 5px;
+            width: 200px; /* Adjust width as needed */
+            outline: none;
+        }
+        
+        .search-container input[type="text"]::placeholder {
+            color: #fff; /* Change placeholder color */
+        }
+        
+        .search-container button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        .profile-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        
+        .profile-container img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .paragraph {
+            color: #fff;
+            margin-top: 70px; /* Adjust margin-top to move the paragraph below the navbar */
+            padding: 20px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+        
+        .profile img {
+            width: 50px; /* Increased size */
+            height: 50px; /* Increased size */
+            border-radius: 100%;
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        
+        /* Profile menu styling */
+        .menu {
+            position: absolute;
+            top: 60px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+            z-index: 1001; /* Ensure the menu appears above other content */
+        }
+        
+        .menu button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        .menu button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        
+        .paragraph {
+            color: #fff;
+            margin-top: 70px;
+            /* Adjust margin-top to move the paragraph below the navbar */
+            padding: 20px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="E:\UC-Code\NAVBAR\URBAN CARE-logos_white1.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="E:\UC-Code\FINAL\index.html">Home</a></li>
+            <li><a href="E:\UC-Code\FINAL\index.html">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+         <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search">
+            <button type="button" onclick="searchText(document.getElementById('searchInput').value)">&#x1F50E;&#xFE0E;</button>
+        </div>
+        <div class="profile" id="profile">
+            <img src="E:\UC-Code\NAVBAR\profile.jpg" alt="Profile Picture" onclick="toggleMenu()">
+            <div class="menu" id="profileMenu">
+                <!-- Menu items as buttons -->
+                <a href="E:\UC-Code\FINAL\profile.html">
+                <button type="button">Profile</button>
+            </a>
+                <button onclick="location.href='#';">Settings</button>
+                <button class="btn btn-outline-success" type="button" id="signOutButton">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="E:\UC-Code\FINAL\download.jpeg" alt="Profile Photo">
+                    <label for="avatar">Choose a profile picture:</label>
+
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+
+                </div>
+                <div class="profile-info">
+                    
+                    
+                    <h3 id="greet"></h3>
+                    <h3 id="msg"></h3>
+
+
+                    
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="order-section">
+                <br>
+                    <h3>Order History : </h3>
+                    <ul>
+                        </u><li>Order #12345 - Date: 2024-04-01</li><br>
+                        <li>Order #67890 - Date: 2024-03-25</li><br>
+                        <li>Order #54321 - Date: 2024-03-15</li><br>
+                    </ul>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="profileLogic.js"></script>
+
+</html>
